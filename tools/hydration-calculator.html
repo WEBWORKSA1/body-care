@@ -1,0 +1,40 @@
+---
+layout: default
+full_title: "Water Intake Calculator: How Much Water Should I Drink? | Body.Care"
+description: "Calculate your daily water intake from body weight, exercise, climate and pregnancy or breastfeeding."
+canon_path: "tools/hydration-calculator.html"
+base: "../"
+og_type: "website"
+active: "tools/index.html"
+scripts: ["ingredients.js", "tools.js"]
+schema: |
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://body.care/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://body.care/tools/index.html"}, {"@type": "ListItem", "position": 3, "name": "Hydration Calculator"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Body.Care Hydration Calculator", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://body.care/tools/hydration-calculator.html"}</script>
+---
+{% raw %}
+<section class="page-hero"><div class="wrap" style="max-width:960px"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../tools/index.html">Tools</a> / Hydration Calculator</nav>
+ <span class="eyebrow">Free tool</span><h1>Hydration Calculator</h1><p class="lead">Your daily fluid target based on weight, exercise, climate and life stage.</p></div></section>
+<section class="section" style="padding-top:10px"><div class="wrap" style="max-width:960px">
+ <form id="hydration-form" class="card form">
+ <div class="form-row two"><div class="field"><label for="hy-weight">Body weight</label><input id="hy-weight" type="number" min="30" max="700" step="0.1" required></div>
+ <div class="field"><label for="hy-unit">Unit</label><select id="hy-unit"><option value="kg">kg</option><option value="lb">lb</option></select></div></div>
+ <div class="form-row two"><div class="field"><label for="hy-exercise">Exercise per day (minutes)</label><input id="hy-exercise" type="number" min="0" max="600" value="30"></div>
+ <div class="field"><label for="hy-climate">Climate</label><select id="hy-climate"><option value="temperate">Temperate / cool</option><option value="hot">Hot & dry</option><option value="humid">Hot & humid</option></select></div></div>
+ <div class="field"><label for="hy-state">Life stage</label><select id="hy-state"><option value="none">None of these</option><option value="pregnant">Pregnant</option><option value="breastfeeding">Breastfeeding</option></select></div>
+ <button class="btn btn-brand" type="submit" style="justify-self:start">Calculate</button></form><div id="hy-result" hidden style="margin-top:24px"></div>
+ <div class="ad-slot" data-slot="inArticle" data-format="auto"></div>
+ <div data-lead-after hidden><section class="lead-band" style="margin-top:28px" data-lead-after>
+ <div><span class="eyebrow" style="color:var(--accent-2)">Free · instant</span><h2>Email me this result + a free 30-day plan</h2><p>We'll send your result, a printable routine and weekly tips. Free, no spam.</p>
+  <ul class="checklist"><li>Your personalised result, saved</li><li>30-day step-by-step plan</li><li>Member-only product deals & giveaway entries</li></ul></div>
+ <form class="form on-dark" data-form="plan" data-tool="hydration-calculator" data-success="Sent! Check your inbox (and promotions tab).">
+  <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <input type="hidden" name="source" value="tool:hydration-calculator"><input type="hidden" name="result" value="">
+  <div class="form-row two"><div class="field"><label for="pf-n-hydration-calculator">First name</label><input id="pf-n-hydration-calculator" name="name" type="text" required autocomplete="given-name"></div>
+  <div class="field"><label for="pf-e-hydration-calculator">Email</label><input id="pf-e-hydration-calculator" name="email" type="email" required autocomplete="email"></div></div>
+  <label class="consent"><input type="checkbox" name="consent" required> Send me my plan and the weekly digest. I accept the <a href="../privacy.html" style="color:#fff">privacy policy</a>.</label>
+  <button class="btn btn-primary btn-block" type="submit">Send my free plan →</button>
+  <p class="form-msg" role="status"></p>
+ </form>
+</section></div>
+ <h2 style="margin-top:40px">More free tools</h2><div class="grid g3"><a class="card reveal" href="../tools/skin-quiz.html"><div class="card-ico">🧪</div><h3>Skin Type Quiz</h3><p>7 questions → your skin type, sensitivity flag and a starter routine.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="../tools/routine-builder.html"><div class="card-ico">🗓️</div><h3>Routine Builder</h3><p>A personalised AM/PM/weekly routine for your type, concerns and budget.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="../tools/ingredient-checker.html"><div class="card-ico">🔬</div><h3>Ingredient Checker</h3><p>Paste any INCI list — get ratings, pore-clog, fungal-acne & pregnancy flags.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="../tools/layering-checker.html"><div class="card-ico">🧩</div><h3>Layering Checker</h3><p>Can you use retinol with vitamin C? Check any combination of actives.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="../tools/sunscreen-calculator.html"><div class="card-ico">☀️</div><h3>Sunscreen Calculator</h3><p>Exactly how much SPF you need, plus a reapply timer with alerts.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="#main"><div class="card-ico">💧</div><h3>Hydration Calculator</h3><p>Your daily fluid target by weight, activity, climate and life stage.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a></div>
+</div></section>{% endraw %}

@@ -1,0 +1,34 @@
+---
+layout: default
+full_title: "Skincare Layering Checker: Can I Mix Retinol, Vitamin C, AHA? | Body.Care"
+description: "Check which skincare actives can be layered together: retinol, AHA/BHA, vitamin C, benzoyl peroxide and niacinamide — plus the correct layering order."
+canon_path: "tools/layering-checker.html"
+base: "../"
+og_type: "website"
+active: "tools/index.html"
+scripts: ["ingredients.js", "tools.js"]
+schema: |
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://body.care/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://body.care/tools/index.html"}, {"@type": "ListItem", "position": 3, "name": "Layering Checker"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Body.Care Layering Checker", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://body.care/tools/layering-checker.html"}</script>
+---
+{% raw %}
+<section class="page-hero"><div class="wrap" style="max-width:960px"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../tools/index.html">Tools</a> / Layering Checker</nav>
+ <span class="eyebrow">Free tool</span><h1>Layering Checker</h1><p class="lead">Which actives can share a routine, which to separate AM/PM, and the correct layering order.</p></div></section>
+<section class="section" style="padding-top:10px"><div class="wrap" style="max-width:960px">
+ <form id="layer-form" class="card form"><label>Select the actives you want to use</label><div class="chips"><label class="chip"><input type="checkbox" name="active" value="retinoid"><span>Retinol / retinoid</span></label><label class="chip"><input type="checkbox" name="active" value="acid"><span>AHA / BHA (glycolic, lactic, salicylic)</span></label><label class="chip"><input type="checkbox" name="active" value="vitc"><span>Vitamin C</span></label><label class="chip"><input type="checkbox" name="active" value="bp"><span>Benzoyl peroxide</span></label><label class="chip"><input type="checkbox" name="active" value="vitaminb3"><span>Niacinamide</span></label></div><button class="btn btn-brand" type="submit" style="justify-self:start">Check compatibility</button></form><div id="layer-result" hidden style="margin-top:24px"></div>
+ <div class="ad-slot" data-slot="inArticle" data-format="auto"></div>
+ <div data-lead-after hidden><section class="lead-band" style="margin-top:28px" data-lead-after>
+ <div><span class="eyebrow" style="color:var(--accent-2)">Free · instant</span><h2>Email me this result + a free 30-day plan</h2><p>We'll send your result, a printable routine and weekly tips. Free, no spam.</p>
+  <ul class="checklist"><li>Your personalised result, saved</li><li>30-day step-by-step plan</li><li>Member-only product deals & giveaway entries</li></ul></div>
+ <form class="form on-dark" data-form="plan" data-tool="layering-checker" data-success="Sent! Check your inbox (and promotions tab).">
+  <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <input type="hidden" name="source" value="tool:layering-checker"><input type="hidden" name="result" value="">
+  <div class="form-row two"><div class="field"><label for="pf-n-layering-checker">First name</label><input id="pf-n-layering-checker" name="name" type="text" required autocomplete="given-name"></div>
+  <div class="field"><label for="pf-e-layering-checker">Email</label><input id="pf-e-layering-checker" name="email" type="email" required autocomplete="email"></div></div>
+  <label class="consent"><input type="checkbox" name="consent" required> Send me my plan and the weekly digest. I accept the <a href="../privacy.html" style="color:#fff">privacy policy</a>.</label>
+  <button class="btn btn-primary btn-block" type="submit">Send my free plan →</button>
+  <p class="form-msg" role="status"></p>
+ </form>
+</section></div>
+ <h2 style="margin-top:40px">More free tools</h2><div class="grid g3"><a class="card reveal" href="../tools/skin-quiz.html"><div class="card-ico">🧪</div><h3>Skin Type Quiz</h3><p>7 questions → your skin type, sensitivity flag and a starter routine.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="../tools/routine-builder.html"><div class="card-ico">🗓️</div><h3>Routine Builder</h3><p>A personalised AM/PM/weekly routine for your type, concerns and budget.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="../tools/ingredient-checker.html"><div class="card-ico">🔬</div><h3>Ingredient Checker</h3><p>Paste any INCI list — get ratings, pore-clog, fungal-acne & pregnancy flags.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="#main"><div class="card-ico">🧩</div><h3>Layering Checker</h3><p>Can you use retinol with vitamin C? Check any combination of actives.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="../tools/sunscreen-calculator.html"><div class="card-ico">☀️</div><h3>Sunscreen Calculator</h3><p>Exactly how much SPF you need, plus a reapply timer with alerts.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="../tools/hydration-calculator.html"><div class="card-ico">💧</div><h3>Hydration Calculator</h3><p>Your daily fluid target by weight, activity, climate and life stage.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a></div>
+</div></section>{% endraw %}

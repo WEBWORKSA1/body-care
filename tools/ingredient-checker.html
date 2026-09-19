@@ -1,0 +1,42 @@
+---
+layout: default
+full_title: "Ingredient Checker: Decode Any Skincare INCI List | Body.Care"
+description: "Paste any skincare or body care ingredient list to see what each ingredient does, plus pore-clogging, fungal-acne, irritant and pregnancy flags."
+canon_path: "tools/ingredient-checker.html"
+base: "../"
+og_type: "website"
+active: "tools/index.html"
+scripts: ["ingredients.js", "tools.js"]
+schema: |
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://body.care/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://body.care/tools/index.html"}, {"@type": "ListItem", "position": 3, "name": "Ingredient Checker"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Body.Care Ingredient Checker", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://body.care/tools/ingredient-checker.html"}</script>
+---
+{% raw %}
+<section class="page-hero"><div class="wrap" style="max-width:960px"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../tools/index.html">Tools</a> / Ingredient Checker</nav>
+ <span class="eyebrow">Free tool</span><h1>Ingredient Checker</h1><p class="lead">Paste an ingredient list from any product. We'll explain each ingredient and flag potential issues for your skin profile.</p></div></section>
+<section class="section" style="padding-top:10px"><div class="wrap" style="max-width:960px">
+ <form id="inci-form" class="card form">
+ <div class="field"><label for="inci-text">Paste the ingredient list (INCI)</label><textarea id="inci-text" placeholder="Aqua, Glycerin, Niacinamide, Cetearyl Alcohol, …" required></textarea></div>
+ <div><label>Flag ingredients for my profile</label><div class="chips">
+  <label class="chip"><input type="checkbox" name="profile" value="acne" checked><span>Acne-prone</span></label>
+  <label class="chip"><input type="checkbox" name="profile" value="sensitive" checked><span>Sensitive</span></label>
+  <label class="chip"><input type="checkbox" name="profile" value="fungal"><span>Fungal acne</span></label>
+  <label class="chip"><input type="checkbox" name="profile" value="pregnant"><span>Pregnant / breastfeeding</span></label></div></div>
+ <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-brand" type="submit">Analyse ingredients</button><button class="btn btn-ghost" type="button" data-sample>Try a sample</button></div>
+</form><div id="inci-result" hidden style="margin-top:24px"></div>
+ <div class="ad-slot" data-slot="inArticle" data-format="auto"></div>
+ <div data-lead-after hidden><section class="lead-band" style="margin-top:28px" data-lead-after>
+ <div><span class="eyebrow" style="color:var(--accent-2)">Free · instant</span><h2>Email me this result + a free 30-day plan</h2><p>We'll send your result, a printable routine and weekly tips. Free, no spam.</p>
+  <ul class="checklist"><li>Your personalised result, saved</li><li>30-day step-by-step plan</li><li>Member-only product deals & giveaway entries</li></ul></div>
+ <form class="form on-dark" data-form="plan" data-tool="ingredient-checker" data-success="Sent! Check your inbox (and promotions tab).">
+  <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <input type="hidden" name="source" value="tool:ingredient-checker"><input type="hidden" name="result" value="">
+  <div class="form-row two"><div class="field"><label for="pf-n-ingredient-checker">First name</label><input id="pf-n-ingredient-checker" name="name" type="text" required autocomplete="given-name"></div>
+  <div class="field"><label for="pf-e-ingredient-checker">Email</label><input id="pf-e-ingredient-checker" name="email" type="email" required autocomplete="email"></div></div>
+  <label class="consent"><input type="checkbox" name="consent" required> Send me my plan and the weekly digest. I accept the <a href="../privacy.html" style="color:#fff">privacy policy</a>.</label>
+  <button class="btn btn-primary btn-block" type="submit">Send my free plan →</button>
+  <p class="form-msg" role="status"></p>
+ </form>
+</section></div>
+ <h2 style="margin-top:40px">More free tools</h2><div class="grid g3"><a class="card reveal" href="../tools/skin-quiz.html"><div class="card-ico">🧪</div><h3>Skin Type Quiz</h3><p>7 questions → your skin type, sensitivity flag and a starter routine.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="../tools/routine-builder.html"><div class="card-ico">🗓️</div><h3>Routine Builder</h3><p>A personalised AM/PM/weekly routine for your type, concerns and budget.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="#main"><div class="card-ico">🔬</div><h3>Ingredient Checker</h3><p>Paste any INCI list — get ratings, pore-clog, fungal-acne & pregnancy flags.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="../tools/layering-checker.html"><div class="card-ico">🧩</div><h3>Layering Checker</h3><p>Can you use retinol with vitamin C? Check any combination of actives.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="../tools/sunscreen-calculator.html"><div class="card-ico">☀️</div><h3>Sunscreen Calculator</h3><p>Exactly how much SPF you need, plus a reapply timer with alerts.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="../tools/hydration-calculator.html"><div class="card-ico">💧</div><h3>Hydration Calculator</h3><p>Your daily fluid target by weight, activity, climate and life stage.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a></div>
+</div></section>{% endraw %}
