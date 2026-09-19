@@ -1,0 +1,39 @@
+---
+layout: default
+full_title: "Sunscreen Calculator: How Much SPF Do I Need? + Reapply Timer | Body.Care"
+description: "Calculate how much sunscreen to apply for the areas you expose, the right SPF for today's UV index, and set a reapply timer."
+canon_path: "tools/sunscreen-calculator.html"
+base: "../"
+og_type: "website"
+active: "tools/index.html"
+scripts: ["ingredients.js", "tools.js"]
+schema: |
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://body.care/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://body.care/tools/index.html"}, {"@type": "ListItem", "position": 3, "name": "Sunscreen Calculator"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Body.Care Sunscreen Calculator", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://body.care/tools/sunscreen-calculator.html"}</script>
+---
+{% raw %}
+<section class="page-hero"><div class="wrap" style="max-width:960px"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../tools/index.html">Tools</a> / Sunscreen Calculator</nav>
+ <span class="eyebrow">Free tool</span><h1>Sunscreen Calculator</h1><p class="lead">How much sunscreen you actually need, what SPF suits today's UV index, and a reapply timer.</p></div></section>
+<section class="section" style="padding-top:10px"><div class="wrap" style="max-width:960px">
+ <form id="spf-form" class="card form"><label>Which areas are exposed?</label><div class="chips"><label class="chip"><input type="checkbox" name="area" value="3" checked><span>Face + neck (≈ ¼ tsp)</span></label><label class="chip"><input type="checkbox" name="area" value="1" checked><span>Ears</span></label><label class="chip"><input type="checkbox" name="area" value="4" checked><span>Both arms</span></label><label class="chip"><input type="checkbox" name="area" value="6"><span>Chest + stomach</span></label><label class="chip"><input type="checkbox" name="area" value="6"><span>Back</span></label><label class="chip"><input type="checkbox" name="area" value="8"><span>Both legs</span></label><label class="chip"><input type="checkbox" name="area" value="2"><span>Feet + tops of hands</span></label></div>
+ <div class="form-row two"><div class="field"><label for="uv">Today's UV index (check your weather app)</label><input id="uv" type="number" min="0" max="15" value="6"></div>
+ <div class="field"><label for="spf-activity">Activity</label><select id="spf-activity"><option value="normal">Normal outdoor day</option><option value="sweat">Sport / heavy sweating</option><option value="water">Swimming</option></select></div></div>
+ <button class="btn btn-brand" type="submit" style="justify-self:start">Calculate</button></form>
+ <div id="spf-result" hidden style="margin-top:24px"></div>
+ <div id="timer-box" class="card center" hidden style="margin-top:18px"><h3>Reapply timer</h3><div class="timer" id="timer-display">00:00</div><button class="btn btn-primary" id="timer-start" type="button" style="margin-top:12px">Start timer</button><p class="small muted" style="margin-top:8px">Allow notifications to get an alert.</p></div>
+ <div class="ad-slot" data-slot="inArticle" data-format="auto"></div>
+ <div data-lead-after hidden><section class="lead-band" style="margin-top:28px" data-lead-after>
+ <div><span class="eyebrow" style="color:var(--accent-2)">Free · instant</span><h2>Email me this result + a free 30-day plan</h2><p>We'll send your result, a printable routine and weekly tips. Free, no spam.</p>
+  <ul class="checklist"><li>Your personalised result, saved</li><li>30-day step-by-step plan</li><li>Member-only product deals & giveaway entries</li></ul></div>
+ <form class="form on-dark" data-form="plan" data-tool="sunscreen-calculator" data-success="Sent! Check your inbox (and promotions tab).">
+  <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <input type="hidden" name="source" value="tool:sunscreen-calculator"><input type="hidden" name="result" value="">
+  <div class="form-row two"><div class="field"><label for="pf-n-sunscreen-calculator">First name</label><input id="pf-n-sunscreen-calculator" name="name" type="text" required autocomplete="given-name"></div>
+  <div class="field"><label for="pf-e-sunscreen-calculator">Email</label><input id="pf-e-sunscreen-calculator" name="email" type="email" required autocomplete="email"></div></div>
+  <label class="consent"><input type="checkbox" name="consent" required> Send me my plan and the weekly digest. I accept the <a href="../privacy.html" style="color:#fff">privacy policy</a>.</label>
+  <button class="btn btn-primary btn-block" type="submit">Send my free plan →</button>
+  <p class="form-msg" role="status"></p>
+ </form>
+</section></div>
+ <h2 style="margin-top:40px">More free tools</h2><div class="grid g3"><a class="card reveal" href="../tools/skin-quiz.html"><div class="card-ico">🧪</div><h3>Skin Type Quiz</h3><p>7 questions → your skin type, sensitivity flag and a starter routine.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="../tools/routine-builder.html"><div class="card-ico">🗓️</div><h3>Routine Builder</h3><p>A personalised AM/PM/weekly routine for your type, concerns and budget.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="../tools/ingredient-checker.html"><div class="card-ico">🔬</div><h3>Ingredient Checker</h3><p>Paste any INCI list — get ratings, pore-clog, fungal-acne & pregnancy flags.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="../tools/layering-checker.html"><div class="card-ico">🧩</div><h3>Layering Checker</h3><p>Can you use retinol with vitamin C? Check any combination of actives.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="#main"><div class="card-ico">☀️</div><h3>Sunscreen Calculator</h3><p>Exactly how much SPF you need, plus a reapply timer with alerts.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a><a class="card reveal" href="../tools/hydration-calculator.html"><div class="card-ico">💧</div><h3>Hydration Calculator</h3><p>Your daily fluid target by weight, activity, climate and life stage.</p><div class="card-meta"><span>Free</span><span>No sign-up to use</span></div></a></div>
+</div></section>{% endraw %}
