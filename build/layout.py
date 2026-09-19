@@ -6,6 +6,9 @@ SITE = "https://body.care"
 NAME = "Body.Care"
 TAGLINE = "Science-first care for your whole body"
 VERSION = "1.0.0"
+# JEKYLL=True: pages are emitted as front matter + body and wrapped by _layouts/default.html
+# (GitHub Pages builds them server-side, so no Actions workflow is needed). False: full static HTML.
+JEKYLL = True
 
 LOGO = ('<svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">'
         '<stop offset="0" stop-color="#0f5e59"/><stop offset="1" stop-color="#e8674a"/></linearGradient></defs>'
@@ -56,7 +59,7 @@ def head(title, desc, path, base, schema=None, og_type="website", extra=""):
 <meta property="og:image" content="{SITE}/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{base}assets/img/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="{base}assets/img/icon-192.png">
+<link rel="apple-touch-icon" href="{base}assets/img/favicon.svg">
 <link rel="manifest" href="{base}manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -98,7 +101,7 @@ def newsletter_form(base, where="footer"):
  <p class="form-msg" role="status" style="flex-basis:100%"></p>
 </form>"""
 
-def footer(base, popup=True):
+def footer(base, popup=True, jekyll=False):
     cats = "".join(f'<li><a href="{base}library.html#{k}">{n}</a></li>' for k, n, _ in __import__("content").CATEGORIES[:6])
     modal = f"""<div class="modal" id="lead-modal" role="dialog" aria-modal="true" aria-labelledby="lm-title">
  <div class="modal-box">
@@ -117,6 +120,8 @@ def footer(base, popup=True):
   </form>
  </div>
 </div>""" if popup else ""
+    if jekyll:
+        modal = "{% unless page.nopopup %}" + modal + "{% endunless %}"
     return f"""
 <footer class="site-footer">
  <div class="wrap">
@@ -161,12 +166,14 @@ def footer(base, popup=True):
 <script src="{base}assets/js/main.js?v={VERSION}" defer></script>
 """
 
-def page(path, title, desc, body_html, active="", schema=None, scripts=(), og_type="website", popup=True, body_attr=""):
+def page(path, title, desc, body_html, active="", schema=None, scripts=(), og_type="website", popup=True, body_attr="", extra_fm=None):
     depth = path.count("/")
     base = "../" * depth
     sch = [{"@context": "https://schema.org", "@type": "WebSite", "name": NAME, "url": SITE,
             "potentialAction": {"@type": "SearchAction", "target": SITE + "/search.html?q={q}", "query-input": "required name=q"}}] if path == "index.html" else []
     sch += (schema or [])
+    if JEKYLL:
+        return jekyll_page(path, title, desc, body_html.replace("{base}", base), base, active, sch, scripts, og_type, popup, body_attr, extra_fm)
     out = head(title, desc, path, base, sch, og_type) + header(base, active).replace("<body>", f"<body{(' ' + body_attr) if body_attr else ''}>", 1)
     out += '<main id="main">' + body_html.replace("{base}", base) + "</main>" + footer(base, popup)
     for s in scripts:
@@ -203,3 +210,49 @@ def plan_form(base, tool, heading="Email me this result + a free 30-day plan", s
   <p class="form-msg" role="status"></p>
  </form>
 </section>"""
+
+
+# ------------------------------------------------------------------ Jekyll output
+def _q(v):
+    """YAML double-quoted scalar (JSON strings are valid YAML)."""
+    return json.dumps(v, ensure_ascii=False)
+
+def jekyll_page(path, title, desc, body_html, base, active, schema, scripts, og_type, popup, body_attr, extra_fm=None):
+    full_title = title if NAME in title else f"{title} | {NAME}"
+    fm = ["---", "layout: default", f"full_title: {_q(full_title)}", f"description: {_q(desc)}",
+          f"canon_path: {_q(path.replace('index.html', ''))}", f"base: {_q(base)}", f"og_type: {_q(og_type)}",
+          f"active: {_q(active)}"]
+    if body_attr: fm.append(f"body_attr: {_q(body_attr)}")
+    if not popup: fm.append("nopopup: true")
+    if scripts: fm.append("scripts: [" + ", ".join(_q(x) for x in scripts) + "]")
+    if schema:
+        fm.append("schema: |")
+        for sc in schema:
+            fm.append('  <script type="application/ld+json">' + json.dumps(sc, ensure_ascii=False) + "</script>")
+    for k, v in (extra_fm or {}).items():
+        fm.append(f"{k}: {_q(v) if isinstance(v, str) else json.dumps(v)}")
+    fm.append("---")
+    return "\n".join(fm) + "\n{% raw %}" + body_html + "{% endraw %}\n"
+
+def jekyll_layout():
+    """Build _layouts/default.html from the same head/header/footer functions (single source of truth)."""
+    B = "@@B@@"
+    h = head("@@T@@", "@@D@@", "@@P@@", B, [], "@@OG@@", "@@SCHEMA@@")
+    h = h.replace("<title>@@T@@ | Body.Care</title>", "<title>{{ page.full_title | escape }}</title>")
+    h = h.replace('content="@@T@@ | Body.Care"', 'content="{{ page.full_title | escape }}"')
+    h = h.replace('content="@@D@@"', 'content="{{ page.description | escape }}"')
+    h = h.replace(SITE + "/@@P@@", SITE + "/{{ page.canon_path }}")
+    h = h.replace('content="@@OG@@"', 'content="{{ page.og_type }}"')
+    h = h.replace("@@SCHEMA@@", "{{ page.schema }}{{ page.extra_head_end }}")
+    h = h.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n{{ page.extra_head }}', 1)
+    h = h.replace('<meta name="robots" content="index,follow,max-image-preview:large">',
+                  '<meta name="robots" content="{% if page.noindex %}noindex{% else %}index,follow,max-image-preview:large{% endif %}">')
+    hd = header(B, "")
+    hd = hd.replace("<body>", "<body{% if page.body_attr %} {{ page.body_attr }}{% endif %}>", 1)
+    for href, _t in NAV:
+        hd = hd.replace(f'<li><a href="{B}{href}">', f'<li><a href="{B}{href}"{{% if page.active == "{href}" %}} aria-current="page"{{% endif %}}>', 1)
+    ft = footer(B, True, jekyll=True)
+    out = h + hd + '<main id="main">{{ content }}</main>' + ft
+    out += '{% for s in page.scripts %}<script src="' + B + 'assets/js/{{ s }}?v=' + VERSION + '" defer></script>\n{% endfor %}'
+    out += "</body>\n</html>\n"
+    return out.replace(B, "{{ page.base }}")
