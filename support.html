@@ -1,0 +1,40 @@
+---
+layout: default
+full_title: "Support Body.Care — Donate & Become a Member"
+description: "Support Body.Care with a one-time or monthly contribution. Funds expert review, free tools, videos, giveaways and hiring creators."
+canon_path: "support.html"
+base: ""
+og_type: "website"
+active: "support.html"
+schema: |
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://body.care/"}, {"@type": "ListItem", "position": 2, "name": "Support"}]}</script>
+---
+{% raw %}
+<section class="hero" style="padding-bottom:30px"><div class="wrap hero-grid">
+ <div><span class="eyebrow">Reader-supported</span><h1>Keep Body.Care <em>free for everyone.</em></h1>
+  <p class="lead">No paywalls, no pay-to-rank reviews. Your support funds expert review, new tools, video production, community giveaways and hiring great creators.</p>
+  <div class="stack" style="max-width:520px"><div class="meter" data-goal-meter><i></i></div><p class="small muted" data-goal-label>Monthly goal</p></div></div>
+ <form id="donate-form" class="stepper" style="display:grid;gap:16px">
+  <div class="seg" role="group" aria-label="Frequency"><button type="button" class="active" data-freq="once" aria-pressed="true">One-time</button><button type="button" data-freq="monthly" aria-pressed="false">Monthly ❤️</button></div>
+  <div class="tiers"><label class="tier"><input type="radio" name="amt" value="5"><span><b>$5</b>Coffee</span></label><label class="tier"><input type="radio" name="amt" value="15" checked><span><b>$15</b>Supporter</span></label><label class="tier"><input type="radio" name="amt" value="35"><span><b>$35</b>Champion</span></label><label class="tier"><input type="radio" name="amt" value="100"><span><b>$100</b>Patron</span></label></div>
+  <div class="field"><label for="custom-amount">Or enter an amount (USD)</label><input id="custom-amount" type="number" min="1" step="1" placeholder="Custom amount"></div>
+  <p id="donate-summary" style="font-weight:600;margin:0"></p>
+  <button class="btn btn-primary btn-block" type="submit">Continue to secure checkout →</button>
+  <div class="chips" style="justify-content:center"><a class="btn btn-ghost btn-sm" data-donate-link="paypal" target="_blank" rel="noopener">PayPal</a><a class="btn btn-ghost btn-sm" data-donate-link="kofi" target="_blank" rel="noopener">Ko-fi</a><a class="btn btn-ghost btn-sm" data-donate-link="buymeacoffee" target="_blank" rel="noopener">Buy Me a Coffee</a><a class="btn btn-ghost btn-sm" data-donate-link="githubSponsors" target="_blank" rel="noopener">GitHub Sponsors</a><a class="btn btn-ghost btn-sm" data-donate-link="patreon" target="_blank" rel="noopener">Patreon</a></div>
+  <p class="small muted center" style="margin:0">Payments are processed securely by the provider. Body.Care never sees your card details.</p>
+ </form>
+</div></section>
+<section class="section alt"><div class="wrap grid g2" style="align-items:center">
+ <div><span class="eyebrow">Where your money goes</span><h2>Transparent by default</h2><p class="lead">We publish a quarterly breakdown. Target allocation:</p><div class="bar-row"><span>Expert review</span><div class="meter"><i style="width:35%"></i></div><span>35%</span></div><div class="bar-row"><span>New tools & site</span><div class="meter"><i style="width:25%"></i></div><span>25%</span></div><div class="bar-row"><span>Video production</span><div class="meter"><i style="width:20%"></i></div><span>20%</span></div><div class="bar-row"><span>Giveaways & prizes</span><div class="meter"><i style="width:10%"></i></div><span>10%</span></div><div class="bar-row"><span>Marketing & outreach</span><div class="meter"><i style="width:10%"></i></div><span>10%</span></div></div>
+ <div class="grid" style="gap:14px">
+  <div class="card"><h3>☕ Body.Care Circle (monthly)</h3><p>Supporters get the ad-light members' digest, early access to new tools, bonus giveaway entries and a name on the supporters wall (optional).</p></div>
+  <div class="card"><h3>🏢 Sponsor a tool or guide</h3><p>Companies can underwrite a tool, translation or guide series with clear, non-editorial credit. <a href="advertise.html">Learn more</a>.</p></div>
+  <div class="card"><h3>🎁 Fund a prize</h3><p>Sponsor a monthly giveaway prize and reach an engaged audience. <a href="contests.html#sponsor">Details</a>.</p></div>
+ </div>
+</div></section>
+<section class="section"><div class="wrap" style="max-width:820px">
+ <h2 class="center">Other ways to help (free)</h2>
+ <div class="grid g3" style="margin-top:20px"><div class="card"><h3>Share</h3><p>Send a guide to someone who'd benefit.</p><button class="btn btn-ghost btn-sm" data-share="native" style="margin-top:10px">Share Body.Care</button></div><div class="card"><h3>Subscribe</h3><p>Subscribe on YouTube and turn on notifications.</p><a class="btn btn-ghost btn-sm" data-yt-channel target="_blank" rel="noopener" style="margin-top:10px">YouTube</a></div><div class="card"><h3>Contribute</h3><p>Write, film, translate or review with us.</p><a class="btn btn-ghost btn-sm" href="careers.html" style="margin-top:10px">Join us</a></div></div>
+ <details class="faq" style="margin-top:28px"><summary>Is my donation tax-deductible?</summary><div>Body.Care is an independent publisher, not a registered charity, so contributions are not tax-deductible. They go directly into operations.</div></details>
+ <details class="faq"><summary>Can I cancel a monthly contribution?</summary><div>Yes, anytime, via the receipt email from your payment provider or by emailing us.</div></details>
+</div></section>{% endraw %}
