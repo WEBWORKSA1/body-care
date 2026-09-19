@@ -1,0 +1,81 @@
+---
+layout: default
+full_title: "Free Personalised Body Care Plan + Clinic Matching | Body.Care"
+description: "Get a free 30-day personalised skin, hair and body care plan in 2 minutes — with optional matching to a vetted local dermatologist or clinic."
+canon_path: "free-plan.html"
+base: ""
+og_type: "website"
+active: "free-plan.html"
+body_attr: "data-no-popup"
+schema: |
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://body.care/"}, {"@type": "ListItem", "position": 2, "name": "Free plan"}]}</script>
+---
+{% raw %}
+<section class="hero" style="padding-bottom:30px"><div class="wrap hero-grid">
+ <div>
+  <span class="eyebrow">Free · 2 minutes · no card needed</span>
+  <h1>Your personalised <em>body care plan</em> — free.</h1>
+  <p class="lead">Answer a few questions. Get a 30-day, step-by-step plan for face, body and hair — matched to your skin, concerns, budget and life stage. Want professional help? We'll also match you with a vetted local clinic.</p>
+  <div class="trust-row"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg> Takes 2 minutes</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg> Budget-matched options</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg> Unsubscribe anytime</span></div>
+ </div>
+ <div class="grid" style="gap:12px">
+  <div class="stat"><b>1 · Tell us</b><span>Skin type, concerns, routine and budget</span></div>
+  <div class="stat"><b>2 · Get your plan</b><span>Emailed instantly: AM/PM routine, weekly steps, product options</span></div>
+  <div class="stat"><b>3 · Optional expert match</b><span>Connect with a vetted dermatologist or clinic near you</span></div>
+ </div>
+</div></section>
+
+<section class="section" style="padding-top:10px" id="plan"><div class="wrap" style="max-width:860px">
+ <form class="stepper form" id="plan-wizard" data-form="plan" data-success="🎉 Your plan is on its way! Check your inbox in the next few minutes.">
+  <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="hidden" name="source" value="plan-wizard"><input type="hidden" name="lead_score" value="">
+  <div class="progress"><i></i></div><p class="small muted" data-count></p>
+  <div class="step"><h2 style="font-size:1.6rem">What do you want to improve?</h2><p class="muted">Pick all that apply.</p>
+   <div class="option-grid"><label class="option"><input type="checkbox" name="goals" value="Acne & breakouts"><span><b>Acne & breakouts</b><small>face, back, chest</small></span></label><label class="option"><input type="checkbox" name="goals" value="Dark spots & tone"><span><b>Dark spots & tone</b><small>PIH, melasma, sun spots</small></span></label><label class="option"><input type="checkbox" name="goals" value="Dryness & sensitivity"><span><b>Dryness & sensitivity</b><small>eczema-prone, itchy</small></span></label><label class="option"><input type="checkbox" name="goals" value="Ageing & texture"><span><b>Ageing & texture</b><small>lines, firmness, pores</small></span></label><label class="option"><input type="checkbox" name="goals" value="Hair & scalp"><span><b>Hair & scalp</b><small>thinning, dandruff, breakage</small></span></label><label class="option"><input type="checkbox" name="goals" value="Body skin"><span><b>Body skin</b><small>KP, rough skin, odour</small></span></label><label class="option"><input type="checkbox" name="goals" value="Sun protection habit"><span><b>Sun protection habit</b></span></label><label class="option"><input type="checkbox" name="goals" value="Complete simple routine"><span><b>Complete simple routine</b></span></label></div></div>
+  <div class="step"><h2 style="font-size:1.6rem">Your skin type</h2><p class="muted">Not sure? <a href="tools/skin-quiz.html" target="_blank">Take the 60-second quiz</a>.</p>
+   <div class="option-grid" data-required="skin_type"><label class="option"><input type="radio" name="skin_type" value="Oily"><span><b>Oily</b></span></label><label class="option"><input type="radio" name="skin_type" value="Dry"><span><b>Dry</b></span></label><label class="option"><input type="radio" name="skin_type" value="Combination"><span><b>Combination</b></span></label><label class="option"><input type="radio" name="skin_type" value="Normal"><span><b>Normal</b></span></label><label class="option"><input type="radio" name="skin_type" value="Sensitive"><span><b>Sensitive</b></span></label><label class="option"><input type="radio" name="skin_type" value="Not sure"><span><b>Not sure</b></span></label></div></div>
+  <div class="step"><h2 style="font-size:1.6rem">A bit about you</h2>
+   <div class="form-row two"><div class="field"><label for="pw-age">Age range</label><select id="pw-age" name="age" required><option value="">Select…</option><option>18–24</option><option>25–34</option><option>35–44</option><option>45–54</option><option>55–64</option><option>65+</option></select></div>
+   <div class="field"><label for="pw-country">Country</label><input id="pw-country" name="country" required autocomplete="country-name" placeholder="e.g. Canada"></div></div>
+   <div class="form-row two" style="margin-top:14px"><div class="field"><label for="pw-budget">Monthly budget for products</label><select id="pw-budget" name="budget" required><option value="">Select…</option><option>Under $25</option><option>$25–$60</option><option>$60–$150</option><option>$150+</option></select></div>
+   <div class="field"><label for="pw-life">Life stage</label><select id="pw-life" name="life_stage"><option>None of these</option><option>Pregnant / trying / breastfeeding</option><option>Perimenopause / menopause</option><option>Teen skin (for my child)</option></select></div></div></div>
+  <div class="step"><h2 style="font-size:1.6rem">Would professional help be useful?</h2><p class="muted">Many concerns (persistent acne, melasma, hair loss) respond faster with a clinician.</p>
+   <div class="option-grid" data-required="pro_interest"><label class="option"><input type="radio" name="pro_interest" value="Yes — match me with a clinic"><span><b>Yes — match me with a clinic</b><small>Dermatologist, med-spa or trichologist near me</small></span></label><label class="option"><input type="radio" name="pro_interest" value="Maybe later"><span><b>Maybe later</b><small>Send info, no contact yet</small></span></label><label class="option"><input type="radio" name="pro_interest" value="No, DIY only"><span><b>No, DIY only</b><small>Just the plan, thanks</small></span></label></div>
+   <div class="form-row two" style="margin-top:14px"><div class="field"><label for="pw-city">City (for clinic matching)</label><input id="pw-city" name="city" autocomplete="address-level2"></div>
+   <div class="field"><label for="pw-when">Timeline</label><select id="pw-when" name="timeline"><option>Just researching</option><option>Within 1 month</option><option>Within 3 months</option></select></div></div></div>
+  <div class="step"><h2 style="font-size:1.6rem">Where should we send your plan?</h2>
+   <div class="form-row two"><div class="field"><label for="pw-n">First name</label><input id="pw-n" name="name" required autocomplete="given-name"></div>
+   <div class="field"><label for="pw-e">Email</label><input id="pw-e" type="email" name="email" required autocomplete="email"></div></div>
+   <div class="field" style="margin-top:14px"><label for="pw-p">Mobile / WhatsApp (optional — for clinic matching)</label><input id="pw-p" type="tel" name="phone" autocomplete="tel"></div>
+   <div class="stack" style="margin-top:14px">
+    <label class="consent"><input type="checkbox" name="consent_email" required> Email me my plan and the weekly Body.Care digest. I accept the <a href="privacy.html">privacy policy</a>.</label>
+    <label class="consent"><input type="checkbox" name="consent_partner" value="yes"> Share my details with up to 3 vetted clinics/partners so they can contact me about my request. (Optional.)</label>
+   </div>
+   <p class="form-msg" role="status"></p></div>
+  <div class="step-nav"><button class="btn btn-ghost btn-sm" type="button" data-back>← Back</button><button class="btn btn-primary" type="button" data-next>Next →</button></div>
+ </form>
+</div></section>
+
+<section class="section alt"><div class="wrap grid g3">
+ <div class="card"><div class="card-ico">🔒</div><h3>Privacy-first</h3><p>We never sell your email. Clinic matching happens only if you tick the box.</p></div>
+ <div class="card"><div class="card-ico">🧾</div><h3>Evidence-based</h3><p>Plans follow published dermatology guidance and cite sources.</p></div>
+ <div class="card"><div class="card-ico">💸</div><h3>Budget-honest</h3><p>Every step has a budget option. Expensive rarely means better.</p></div>
+</div></section>
+
+<section class="section" id="clinics"><div class="wrap grid g2" style="align-items:center">
+ <div><span class="eyebrow">For clinics, brands & practitioners</span><h2>Receive qualified, consented patient enquiries</h2><p class="lead">Dermatology clinics, med-spas, hair-restoration and body-contouring providers: get exclusive, intent-verified leads in your city — with concern, budget and timeline pre-qualified.</p><a class="btn btn-brand" href="advertise.html#leads">Become a partner clinic →</a></div>
+ <div class="card"><h3>What partners receive</h3><ul class="checklist"><li>Opt-in enquiries with explicit consent</li><li>Concern, budget, timeline & city</li><li>Exclusive or shared (max 3) delivery</li><li>Pay-per-lead or monthly territory plans</li></ul></div>
+</div></section>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+ var f=document.getElementById("plan-wizard"),steps=[].slice.call(f.querySelectorAll(".step")),i=0,bar=f.querySelector(".progress i"),back=f.querySelector("[data-back]"),next=f.querySelector("[data-next]"),cnt=f.querySelector("[data-count]");
+ function show(){steps.forEach(function(s,j){s.classList.toggle("active",j===i)});bar.style.width=((i+1)/steps.length*100)+"%";back.style.visibility=i?"visible":"hidden";next.textContent=i===steps.length-1?"Send my free plan →":"Next →";next.type=i===steps.length-1?"submit":"button";cnt.textContent="Step "+(i+1)+" of "+steps.length}
+ function ok(){var s=steps[i],r=s.querySelector("[data-required]");if(r&&!s.querySelector('input[name="'+r.getAttribute("data-required")+'"]:checked')){BC.toast("Pick an option to continue");return false}
+  if(i===0&&!s.querySelector("input:checked")){BC.toast("Pick at least one goal");return false}
+  var bad=[].slice.call(s.querySelectorAll("input,select")).filter(function(x){return !x.checkValidity()});if(bad.length){bad[0].reportValidity();return false}return true}
+ next.addEventListener("click",function(e){if(i<steps.length-1){e.preventDefault();if(!ok())return;i++;show();BC.track&&BC.track("plan_step",{step:i+1});f.scrollIntoView({behavior:"smooth",block:"start"})}});
+ back.addEventListener("click",function(){if(i){i--;show()}});
+ f._enrich=function(d){var s=0;if(/clinic/i.test(d.pro_interest||""))s+=40;if(d.phone)s+=15;if(/1 month/.test(d.timeline||""))s+=20;else if(/3 months/.test(d.timeline||""))s+=10;if(/\$60|\$150/.test(d.budget||""))s+=15;if(d.consent_partner)s+=10;d.lead_score=s;d.lead_tier=s>=60?"HOT":s>=30?"WARM":"NURTURE"};
+ f.addEventListener("bc:success",function(){i=0;show()});
+ show();
+});
+</script>{% endraw %}
