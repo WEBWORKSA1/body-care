@@ -1,0 +1,18 @@
+{
+ "name": "Body.Care",
+ "short_name": "Body.Care",
+ "description": "Science-first care for your whole body",
+ "start_url": "./index.html",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#fbf8f3",
+ "theme_color": "#0f5e59",
+ "icons": [
+  {
+   "src": "assets/img/favicon.svg",
+   "sizes": "any",
+   "type": "image/svg+xml",
+   "purpose": "any"
+  }
+ ]
+}
