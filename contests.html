@@ -1,0 +1,55 @@
+---
+layout: default
+full_title: "Giveaways & Body.Care Awards — Enter Free"
+description: "Enter the free monthly Body.Care giveaway, earn bonus entries by referral, and nominate products for the Body.Care Readers' Choice Awards."
+canon_path: "contests.html"
+base: ""
+og_type: "website"
+active: "contests.html"
+schema: |
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://body.care/"}, {"@type": "ListItem", "position": 2, "name": "Giveaways & Awards"}]}</script>
+---
+{% raw %}
+<section class="hero" style="padding-bottom:30px"><div class="wrap hero-grid">
+ <div><span class="eyebrow">🏆 Giveaways & Awards</span><h1><span data-contest-title>Monthly Body Care Kit Giveaway</span></h1>
+  <p class="lead">Prize: <b data-contest-prize>curated body-care kit</b>. Free to enter. Draw on <b data-contest-end>the 1st</b>. Get <b>+3 bonus entries</b> for every friend who enters with your link.</p>
+  <div class="countdown" data-countdown aria-label="Time left"><div><b>00</b><small>days</small></div><div><b>00</b><small>hrs</small></div><div><b>00</b><small>min</small></div><div><b>00</b><small>sec</small></div></div></div>
+ <form class="stepper form" data-form="contest" data-success="You're entered! Share your link below for bonus entries.">
+  <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="hidden" name="type" value="giveaway-entry"><input type="hidden" name="referrer" value="">
+  <h2 style="font-size:1.5rem">Enter the giveaway</h2>
+  <div class="form-row two"><div class="field"><label for="ct-n">Full name</label><input id="ct-n" name="name" required autocomplete="name"></div><div class="field"><label for="ct-e">Email</label><input id="ct-e" type="email" name="email" required autocomplete="email"></div></div>
+  <div class="form-row two"><div class="field"><label for="ct-c">Country</label><input id="ct-c" name="country" required autocomplete="country-name"></div><div class="field"><label for="ct-ig">Instagram / TikTok (optional)</label><input id="ct-ig" name="social_handle" placeholder="@handle"></div></div>
+  <div class="field"><label for="ct-q">What's your #1 body care struggle? (helps us plan content)</label><input id="ct-q" name="struggle" required></div>
+  <label class="consent"><input type="checkbox" name="age_ok" required> I'm 18+ (or the age of majority where I live) and accept the <a href="#rules">official rules</a>.</label>
+  <label class="consent"><input type="checkbox" name="consent" required> Subscribe me to the Body.Care digest (required for entry; unsubscribe anytime).</label>
+  <button class="btn btn-primary btn-block" type="submit">Enter now — it's free</button><p class="form-msg" role="status"></p>
+  <div id="ref-box" hidden class="result-box"><b>Your bonus-entry link</b><p class="small muted">+3 entries for every friend who enters with it.</p><div style="display:flex;gap:8px"><input type="text" readonly aria-label="Referral link"><button class="btn btn-brand btn-sm" type="button" onclick="var i=this.previousElementSibling;i.select();navigator.clipboard&&navigator.clipboard.writeText(i.value);BC.toast('Copied!')">Copy</button></div></div>
+ </form>
+</div></section>
+
+<section class="section alt" id="awards"><div class="wrap grid g2" style="align-items:start">
+ <div><span class="eyebrow">Body.Care Awards</span><h2>Nominate & vote: Readers' Choice</h2><p class="lead">Every year readers nominate the products that truly work. Finalists are screened on formula, fragrance, evidence and value; readers vote for winners across 10 categories.</p>
+  <ul class="pill-list"><li>Best Gentle Cleanser</li><li>Best Face Moisturiser</li><li>Best Body Lotion</li><li>Best Face Sunscreen</li><li>Best Body Sunscreen</li><li>Best Retinoid</li><li>Best Budget Buy</li><li>Best Anti-Dandruff</li><li>Best Deodorant / Antiperspirant</li><li>Best Men's Grooming</li></ul>
+  <p class="small muted">Brands can't buy awards. Winners may license the Body.Care Awards seal for packaging and marketing.</p></div>
+ <form class="card form" data-form="contest" data-success="Nomination received — thank you!">
+  <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="hidden" name="type" value="award-nomination">
+  <h3>Nominate a product</h3>
+  <div class="field"><label for="aw-cat">Category</label><select id="aw-cat" name="category" required><option value="">Choose…</option><option>Best Gentle Cleanser</option><option>Best Face Moisturiser</option><option>Best Body Lotion</option><option>Best Face Sunscreen</option><option>Best Body Sunscreen</option><option>Best Retinoid</option><option>Best Budget Buy</option><option>Best Anti-Dandruff</option><option>Best Deodorant / Antiperspirant</option><option>Best Men's Grooming</option></select></div>
+  <div class="form-row two"><div class="field"><label for="aw-b">Brand</label><input id="aw-b" name="brand" required></div><div class="field"><label for="aw-p">Product</label><input id="aw-p" name="product" required></div></div>
+  <div class="field"><label for="aw-w">Why does it deserve to win?</label><textarea id="aw-w" name="why" required></textarea></div>
+  <div class="field"><label for="aw-e">Your email (for voting reminders)</label><input id="aw-e" type="email" name="email" required></div>
+  <button class="btn btn-brand" type="submit">Submit nomination</button><p class="form-msg" role="status"></p>
+ </form>
+</div></section>
+
+<section class="section" id="sponsor"><div class="wrap grid g3">
+ <div class="card"><div class="card-ico">🎁</div><h3>Sponsor a prize</h3><p>Brands supply the prize; we promote across site, newsletter and social. Transparent "Prize provided by" credit.</p></div>
+ <div class="card"><div class="card-ico">📸</div><h3>Creator challenges</h3><p>30-day routine challenges and before/after (honest, unfiltered) stories with cash prizes for creators.</p></div>
+ <div class="card"><div class="card-ico">🏫</div><h3>Community grants</h3><p>Quarterly micro-grants for community skin-health education projects, funded by supporters.</p><a class="btn btn-ghost btn-sm" href="advertise.html" style="margin-top:12px">Partner with us →</a></div>
+</div></section>
+
+<section class="section alt" id="rules"><div class="wrap prose" style="max-width:820px">
+ <h2>Official rules (summary)</h2>
+ <ol><li><b>No purchase necessary.</b> A purchase does not improve your chances of winning.</li><li>Open to legal residents 18+ (or age of majority) where not prohibited by law. Void where prohibited. Quebec residents: see full rules for Régie des alcools, des courses et des jeux requirements where applicable.</li><li>Entry period: from the 1st to the last day of each calendar month (local time as displayed).</li><li>One base entry per person per month; +3 bonus entries per unique valid referral, capped at 30 bonus entries.</li><li>Winner drawn at random from eligible entries within 7 days of close and notified by email; 7 days to respond before an alternate is drawn. Canadian winners must correctly answer a skill-testing question.</li><li>Prize as described; no cash alternative except at sponsor's discretion. Odds depend on the number of eligible entries.</li><li>Personal data is used per our <a href="privacy.html">privacy policy</a>. Not sponsored, endorsed or administered by Instagram, TikTok or YouTube.</li></ol>
+ <p class="small muted">Operators should have full rules reviewed by counsel for each country in which entries are accepted.</p>
+</div></section>{% endraw %}
