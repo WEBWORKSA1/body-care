@@ -33,23 +33,25 @@ Open **`assets/js/config.js`** and fill in:
 ## Edit or add content
 
 ```bash
-python3 build/build.py     # regenerates every page, sitemap and search index
+python3 build/build.py            # regenerates every page, sitemap and search index (Jekyll-ready)
+python3 build/build.py --static   # fully rendered HTML instead, for Netlify, Vercel, Cloudflare or S3
 ```
 
 - Add guides in `build/content.py`.
 - Change page templates in `build/pages_main.py` and `build/pages_more.py`.
-- Change the header and footer in `build/layout.py`.
+- Change the shared head, header and footer in `build/layout.py`. This also regenerates `_layouts/default.html`.
 
-You don't need to commit the generated files. On every push to `main`, the workflow in `.github/workflows/deploy.yml` runs `build.py` and publishes the finished site to the **`gh-pages`** branch.
+Commit and push the generated files. GitHub Pages runs its built-in Jekyll build to wrap every page in `_layouts/default.html`. No Actions workflow and no paid plan are needed.
 
-**One-time setup:** go to **Settings → Pages → Build and deployment**, set **Source: Deploy from a branch**, then choose **Branch: `gh-pages` / `(root)`**.
+**One-time setup:** go to **Settings → Pages → Build and deployment**, set **Source: Deploy from a branch**, then choose **Branch: `main` / `(root)`**.
+
+**Optional:** run `build.py` locally with Pillow installed (`pip install pillow`) to create `assets/img/og-image.png` and the PNG app icons. Then upload them to `assets/img/`.
 
 ## Custom domain (body.care)
 
 1. In GitHub, go to repo **Settings → Pages → Custom domain**, enter `body.care`, and save.
 2. At the registrar, add A records `185.199.108.153`, `185.199.109.153`, `185.199.110.153` and `185.199.111.153`, plus a `www` CNAME pointing to `webworksa1.github.io`.
-3. In `.github/workflows/deploy.yml`, uncomment the `echo "body.care" > _site/CNAME` line so the domain survives each deploy.
-4. Tick **Enforce HTTPS** once the certificate has been issued.
+3. Tick **Enforce HTTPS** once the certificate has been issued.
 
 ## Docs
 
