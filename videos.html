@@ -1,0 +1,25 @@
+---
+layout: default
+full_title: "Body Care Videos: Skincare Routines, Sunscreen & More | Body.Care"
+description: "Watch dermatologist-led body care videos on skincare routines, sunscreen application, sunburn treatment and more."
+canon_path: "videos.html"
+base: ""
+og_type: "website"
+active: "videos.html"
+schema: |
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://body.care/"}, {"@type": "ListItem", "position": 2, "name": "Videos"}]}</script>
+---
+{% raw %}
+<section class="page-hero"><div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> / Videos</nav>
+ <span class="eyebrow">Watch & learn</span><h1>Body care, explained on video</h1>
+ <p class="lead">Short, practical videos from dermatologists and trusted educators. Subscribe to the Body.Care channel for weekly routines, myth-busting and product breakdowns.</p>
+ <div class="hero-cta"><a class="btn btn-primary" data-yt-channel target="_blank" rel="noopener">▶ Subscribe on YouTube</a><a class="btn btn-ghost" href="careers.html#creators">Become a Body.Care creator</a></div></div></section>
+<section class="section" style="padding-top:20px"><div class="wrap">
+ <div class="toolbar"><button class="filter-btn active" data-video-filter="All">All</button><button class="filter-btn" data-video-filter="Routines">Routines</button><button class="filter-btn" data-video-filter="Sun">Sun care</button></div>
+ <div class="grid g3" data-videos></div>
+ <div class="ad-slot" data-slot="footer" data-format="auto"></div>
+ <div class="card" style="margin-top:28px"><h3>Suggest a video topic</h3><p>What should we film next? The most-requested topics get made first.</p>
+  <form class="form" data-form="contact" data-success="Thanks — topic logged!" style="margin-top:14px"><input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="hidden" name="type" value="video-topic">
+   <div class="form-row two"><div class="field"><label for="vt">Topic</label><input id="vt" name="topic" required placeholder="e.g. body acne routine"></div><div class="field"><label for="ve">Email (optional)</label><input id="ve" type="email" name="email"></div></div>
+   <button class="btn btn-brand" type="submit">Submit topic</button><p class="form-msg" role="status"></p></form></div>
+</div></section>{% endraw %}
